@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All chats</title>
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+<body>
+    <div class="box">
+    <h1>Chat with us</h1>
+    <%for(chat of chats){%>
+        <div class="chat background">
+            <h2>Send By <%=chat.from%> for <%=chat.to%></h2>
+            <hr>
+            <p><%=chat.msg%></p>
+            <form action="/chat/<%=chat.id%>/edit">
+                <button class="btn">Edit</button>
+            </form>
+            <form action="/delete/<%=chat.id%>?_method=DELETE" method="post">
+                <button class="btn">Delete</button>
+            </form>
+        </div>
+    <%}%>
+    <form action="/new" method="get">
+        <button class="btn2">New Message</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+<body>
+    <div class="box">
+        <h1>Daily work List</h1>
+            <%for(work of works){%>
+                <div class="work">
+                    <ul>
+                        <li><tr>
+                        <td><%=work.workname%></td>
+                        <td><%=work.workDate%></td>
+                        <form action="/delete/<%=work._id%>" method="post"> <button>Delete</button></form>
+                        
+                    </li>
+                </tr>
+                </ul>
+            </div>
+            <%}%>
+            <!-- <form action="/new" method="get">
+                <button class="btn">New Work</button>
+            </form> -->
+    </div>
+</body>
+</html>
